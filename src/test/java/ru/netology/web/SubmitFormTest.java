@@ -38,7 +38,7 @@ public class SubmitFormTest {
 
     @Test
     public void shouldFillTheFormWithCorrectData2() {
-        String planningDate = dateGenerate(3, "dd.MM.yyyy");
+        String planningDate = dateGenerate(7, "dd.MM.yyyy");
 
         Selenide.open("http://localhost:9999");
 
@@ -47,7 +47,7 @@ public class SubmitFormTest {
 
         $("[data-test-id='date'] input").press(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         if (!dateGenerate(3, "MM").equals(dateGenerate(7, "MM"))) $("[data-step='1']").click();
-        $$(".calendar__day").findBy(Condition.text(dateGenerate(3,"d"))).click();
+        $$(".calendar__day").findBy(Condition.text(dateGenerate(7,"d"))).click();
 
         $("[name='name']").setValue("Петров Николай");
         $("[name='phone']").setValue("+71234567898");
